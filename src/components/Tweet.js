@@ -1,19 +1,21 @@
+import Message from "./Message.js";
+import ProfileImage from "./ProfileImage.js";
+import Timestamp from "./Timestamp";
+import User from "./User";
+
 function Tweet({ tweet }) {
   return (
     <div className="tweet">
-      <img src={tweet.user.image} className="profile" alt="profile" />
+      <ProfileImage tweet={tweet} />
 
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">{tweet.user.name}</span>
-            <span className="handle">@{tweet.user.handle}</span>
-          </span>
+          <User tweet={tweet} />
 
-          <span className="timestamp">{tweet.timestamp}</span>
+          <Timestamp tweet={tweet} />
         </div>
 
-        <p className="message">{tweet.message}</p>
+        <Message tweet={tweet} />
 
         <div className="actions">
           {/* Font Awesome icons */}
